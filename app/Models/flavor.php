@@ -7,8 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class flavor extends Model
 {
-    public function items()
-    {
-        return $this->belongsToMany('App\Models\item');
-    }
+    use HasFactory;
 }
