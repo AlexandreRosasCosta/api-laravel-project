@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('price');
             $table->string('amount_flavors');
             $table->string('info');
+            $table->timestamps();
         });
     }
 

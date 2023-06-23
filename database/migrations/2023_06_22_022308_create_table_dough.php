@@ -16,6 +16,7 @@ return new class extends Migration
             $table->double('price');
             $table->string('info');
             $table->string('dough');
+            $table->timestamps();
         });
     }
 

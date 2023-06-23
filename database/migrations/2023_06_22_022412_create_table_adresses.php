@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('district');
             $table->string('cep');
             $table->string('street');
+            $table->timestamps();
 
             $table->foreign('cpf')->references('cpf')->on('users')->onUpdate('cascade')->onDelete('cascade');
         });
