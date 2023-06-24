@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\FlavorController;
+use App\Http\Controllers\RegisterController;
+use App\Models\Users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,9 +17,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+Route::post('/login', [UsersController::class, 'login']);
+Route::get('/users', [UsersController::class, 'getUsers']);
 
 Route::get('/flavor', [FlavorController::class, 'getFlavor']);
 Route::post('/flavor', [FlavorController::class, 'postFlavor']);
