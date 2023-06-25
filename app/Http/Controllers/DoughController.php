@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Dough;
+use Exception;
 use Illuminate\Http\Request;
 
 class DoughController extends Controller
@@ -20,14 +21,21 @@ class DoughController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'price' => 'required',
-            'info' => 'required',
-            'dough' => 'required'
-        ]);
+        try {
+            $request->validate([
+                'price' => 'required',
+                'info' => 'required',
+                'dough' => 'required'
+            ]);
 
-        return Dough::create($request->all());
+            Dough::create($request->all());
 
+            return response("Massa {$request->input('dough')} cadastrada com sucesso", 200)
+                ->header('Content-Type', 'application/json');
+        } catch (Exception $e) {
+            return response($e->getMessage(), 400)
+                ->header('Content-Type', 'application/json');
+        }
     }
 
     /**
@@ -35,7 +43,12 @@ class DoughController extends Controller
      */
     public function show(string $id)
     {
-        return Dough::findOrFail($id);
+        if (Dough::find($id) != null) {
+            return Dough::find($id);
+        } else {
+            return response("ID não encontrado", 400)
+                ->header('Content-Type', 'application/json');
+        }
     }
 
     /**
@@ -43,11 +56,24 @@ class DoughController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $dough = Dough::findOrFail($id);
+        if (Dough::find($id) != null) {
 
-        $dough->update($request->all());
+            $dough = Dough::find($id);
+        } else {
+            return response("ID não encontrado", 400)
+                ->header('Content-Type', 'application/json');
+        }
 
-        return $dough;
+        try {
+
+            $dough->update($request->all());
+
+            return response("Massa {$dough->dough} atualizada com sucesso", 200)
+                ->header('Content-Type', 'application/json');
+        } catch (Exception $e) {
+            return response($e->getMessage(), 400)
+                ->header('Content-Type', 'application/json');
+        }
     }
 
     /**
@@ -55,9 +81,22 @@ class DoughController extends Controller
      */
     public function destroy(string $id)
     {
-        $dough = Dough::findOrFail($id);
-        //$dough->id->destroy();
-        Dough::destroy($dough->id);
-        return "Massa {$dough->dough} deletada com sucesso";
+        try {
+
+            if (Dough::find($id) != null) {
+                $dough = Dough::find($id);
+            } else {
+                return response("ID não encontrado", 400)
+                    ->header('Content-Type', 'application/json');
+            }
+
+            Dough::destroy($dough->id);
+
+            return response("Massa {$dough->dough} removida com sucesso", 200)
+                ->header('Content-Type', 'application/json');
+        } catch (Exception $e) {
+            return response($e->getMessage(), 400)
+                ->header('Content-Type', 'application/json');
+        }
     }
 }

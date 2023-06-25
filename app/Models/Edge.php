@@ -11,6 +11,6 @@ class Edge extends Model
 
     protected $fillable =[
         'price',
-        'edges',
+        'edge',
     ];
 }

@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DoughController;
 use App\Http\Controllers\EdgeController;
 use App\Http\Controllers\FlavorController;
+use App\Http\Controllers\SizeController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -22,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 /*Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
      return $request->user();
  });*/
-	
+
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
@@ -30,11 +31,27 @@ Route::post('/login', [AuthController::class, 'login']);
 //Route::post('/flavor', [FlavorController::class, 'postFlavor']);
 //Route::delete('/flavor', [FlavorController::class, 'deleteFlavor']);
 
-   
-Route::group(['middleware'=>['auth:sanctum']], function(){
-    Route::post('/flavor', [FlavorController::class, 'postFlavor']);
-    Route::delete('/flavor/{id}', [FlavorController::class, 'deleteFlavor']);
+
+Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('/logout', [AuthController::class, 'logout']);
+
+    /*
+    * Rotas sabores
+    */
+    Route::get('/flavor', [FlavorController::class, 'index']);
+    Route::get('/flavor/{id}', [FlavorController::class, 'show']);
+    Route::post('/flavor', [FlavorController::class, 'store']);
+    Route::delete('/flavor/{id}', [FlavorController::class, 'destroy']);
+    Route::put('/flavor/{id}', [FlavorController::class, 'update']);
+
+    /*
+    * Rotas tamanho
+    */
+    Route::get('/size', [SizeController::class, 'index']);
+    Route::get('/size/{id}', [SizeController::class, 'show']);
+    Route::post('/size', [SizeController::class, 'store']);
+    Route::delete('/size/{id}', [SizeController::class, 'destroy']);
+    Route::put('/size/{id}', [SizeController::class, 'update']);
 
     /*
     * Rotas massas
@@ -55,5 +72,4 @@ Route::group(['middleware'=>['auth:sanctum']], function(){
     Route::get('/edge', [EdgeController::class, 'index']);
     Route::get('/edge/{id}', [EdgeController::class, 'show']);
     Route::delete('/edge/{id}', [EdgeController::class, 'destroy']);
-
 });

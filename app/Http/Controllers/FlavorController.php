@@ -10,16 +10,27 @@ use Illuminate\Http\Request;
 class FlavorController extends Controller
 {
 
-    public function getFlavor()
+    public function index()
     {
         return Flavor::all();
     }
 
-    public function postFlavor(Request $request)
+    public function show($id)
+    {
+        if (Flavor::find($id) != null) {
+
+            return Flavor::find($id);
+        } else {
+            return response("ID não encontrado", 400)
+                ->header('Content-Type', 'application/json');
+        }
+    }
+
+    public function store(Request $request)
     {
         try {
             $request->validate([
-                'flavors' => 'required',
+                'flavor' => 'required',
                 'info' => 'required',
                 'type' => 'required',
                 'price' => 'required',
@@ -27,7 +38,7 @@ class FlavorController extends Controller
             ]);
 
             $flavor = new Flavor();
-            $flavor->flavors = $request->input('flavors');
+            $flavor->flavor = $request->input('flavor');
             $flavor->type = $request->input('type');
             $flavor->info = $request->input('info');
             $flavor->price = $request->input('price');
@@ -35,26 +46,55 @@ class FlavorController extends Controller
 
             $flavor->save();
 
-            return "Sabor {$request->input('flavors')} cadastrado com sucesso";
+            return response("Sabor {$request->input('flavor')} cadastrado com sucesso", 200)
+                ->header('Content-Type', 'application/json');
         } catch (Exception $e) {
-            echo $e->getMessage();
+            return response($e->getMessage(), 400)
+                ->header('Content-Type', 'application/json');
         }
     }
 
-    public function deleteFlavor(Request $request)
+    public function destroy($id)
     {
         try {
-           
 
-            $f = Flavor::find($request->input('id'));
+            if (Flavor::find($id) != null) {
+                $f = Flavor::find($id);
+            } else {
+                return response("ID não encontrado", 400)
+                    ->header('Content-Type', 'application/json');
+            }
 
-            Flavor::destroy($request->input('id'));
 
-            return "Sabor {$f->flavors} removido com sucesso";
+            Flavor::destroy($id);
+
+            return response("Sabor {$f->flavor} removido com sucesso", 200)
+                ->header('Content-Type', 'application/json');
         } catch (Exception $e) {
-            echo $e->getMessage();
+            return response($e->getMessage(), 400)
+                ->header('Content-Type', 'application/json');
         }
     }
 
-    
+    public function update(Request $request, $id)
+    {
+        if (Flavor::find($id) != null) {
+
+            $f = Flavor::find($id);
+        } else {
+            return response("ID não encontrado", 400)
+                ->header('Content-Type', 'application/json');
+        }
+
+        try {
+
+            $f->update($request->all());
+
+            return response("Sabor {$f->flavor} atualizado com sucesso", 200)
+                ->header('Content-Type', 'application/json');
+        } catch (Exception $e) {
+            return response($e->getMessage(), 400)
+                ->header('Content-Type', 'application/json');
+        }
+    }
 }

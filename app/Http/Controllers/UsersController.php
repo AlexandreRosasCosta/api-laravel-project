@@ -8,10 +8,9 @@ use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
 {
-    
-public function getUsers()
-{
-    return 'lista de usuários';
-}
 
+    public function getUsers()
+    {
+        return 'lista de usuários';
+    }
 }

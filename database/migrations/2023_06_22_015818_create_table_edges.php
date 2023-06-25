@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('edges', function (Blueprint $table) {
             $table->id();
             $table->double('price');
-            $table->string('edges');
+            $table->string('edge');
             $table->timestamps();
         });
     }

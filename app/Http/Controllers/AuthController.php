@@ -14,18 +14,13 @@ class AuthController extends Controller
 {
      public function register(Request $request){
         $request->validate([
-            'cpf'=>'required|string|unique:users,cpf',
-            'name'=>'required|string',
             'email'=> 'required|string|unique:users,email',
             'password'=> 'required|string'
         ]);
 
         $user = Users::create([
-            'cpf'=> $request->cpf,
-            'name'=> $request->name,
             'email'=> $request->email,
             'password'=> bcrypt($request->password),
-            'birth_date'=> $request->birth_date
         ]);
 
         $token = $user->createToken('firsttoken')->plainTextToken;
