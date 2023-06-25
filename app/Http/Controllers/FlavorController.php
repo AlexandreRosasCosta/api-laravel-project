@@ -44,9 +44,7 @@ class FlavorController extends Controller
     public function deleteFlavor(Request $request)
     {
         try {
-            $request->validate([
-                'id' => 'required',
-            ]);
+           
 
             $f = Flavor::find($request->input('id'));
 
@@ -57,4 +55,6 @@ class FlavorController extends Controller
             echo $e->getMessage();
         }
     }
+
+    
 }

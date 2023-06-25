@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('street');
             $table->timestamps();
 
-            $table->foreign('cpf')->references('cpf')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
