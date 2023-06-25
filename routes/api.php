@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DoughController;
+use App\Http\Controllers\EdgeController;
 use App\Http\Controllers\FlavorController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Http\Request;
@@ -29,13 +30,7 @@ Route::post('/login', [AuthController::class, 'login']);
 //Route::post('/flavor', [FlavorController::class, 'postFlavor']);
 //Route::delete('/flavor', [FlavorController::class, 'deleteFlavor']);
 
-//Route::apiResource('dough', DoughController::class); /*método para simplificar as rotas
-Route::post('/dough', [DoughController::class, 'store']);
-Route::put('/dough/{id}', [DoughController::class, 'update']);
-Route::get('/dough', [DoughController::class, 'index']);
-Route::get('/dough/{id}', [DoughController::class, 'show']);
-Route::delete('/dough/{id}', [DoughController::class, 'destroy']);
-
+   
 Route::group(['middleware'=>['auth:sanctum']], function(){
     Route::post('/flavor', [FlavorController::class, 'postFlavor']);
     Route::delete('/flavor/{id}', [FlavorController::class, 'deleteFlavor']);
@@ -50,5 +45,15 @@ Route::group(['middleware'=>['auth:sanctum']], function(){
     Route::get('/dough', [DoughController::class, 'index']);
     Route::get('/dough/{id}', [DoughController::class, 'show']);
     Route::delete('/dough/{id}', [DoughController::class, 'destroy']);
+
+    /*
+    * Rotas bordas
+    */
+    //Route::apiResource('dough', EdgeController::class); /*método para simplificar as rotas
+    Route::post('/edge', [EdgeController::class, 'store']);
+    Route::put('/edge/{id}', [EdgeController::class, 'update']);
+    Route::get('/edge', [EdgeController::class, 'index']);
+    Route::get('/edge/{id}', [EdgeController::class, 'show']);
+    Route::delete('/edge/{id}', [EdgeController::class, 'destroy']);
 
 });
