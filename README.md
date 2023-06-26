@@ -11,9 +11,6 @@
    * [Features](#features)
    * [Atividades](#atividades)
       * [Maria Eduarda](#maria-eduarda)
-         * Criação da rota e controller de Flavor e Size
-         * Padronização de mensagens de retorno para todos os métodos
-         * Tratamento de erros de todos os métodos
       * [Alexandre](#alexandre)
       * [Jeferson](#jeferson)
 <!--te-->
@@ -25,7 +22,7 @@
 
 
 ## Descrição:
-### Trabalho realizado para a matéria de Web-Servidor com o intuito de apresentar o terceiro projeto para avaliação. O projeto trata-se de uma api que realiza consultas, inserções e deleções no banco de dados do sistema da pizzaria dos outros projetos.
+### Trabalho realizado para a matéria de Web-Servidor com o intuito de apresentar o terceiro projeto para avaliação. O projeto trata-se de uma api que realiza consultas, inserções, atualizações e deleções no banco de dados do sistema da pizzaria dos outros projetos.
 
 
 ## Documentação:
@@ -44,16 +41,20 @@
 ## Features:
 
 - :heavy_check_mark: Criação do banco de dados;
-- :heavy_check_mark: Criação de Seed;
 - :heavy_check_mark: CRUD;
 - :heavy_check_mark: Rotas estruturadas;
-- Autenticação;
+- :heavy_check_mark: Autenticação;
 
 
 ## Atividades:
 
 ### *Maria Eduarda*
 
+#### Criações:
+- Criação da rota e controller de Flavor e Size
+- Padronização de mensagens de retorno para todos os métodos dos controllers
+- Tratamento de erros de todos os métodos dos controllers
+  
 ### *Alexandre*
 
 #### Criações:
