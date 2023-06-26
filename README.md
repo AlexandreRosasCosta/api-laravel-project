@@ -11,6 +11,9 @@
    * [Features](#features)
    * [Atividades](#atividades)
       * [Maria Eduarda](#maria-eduarda)
+         * Criação da rota e controller de Flavor e Size
+         * Padronização de mensagens de retorno para todos os métodos
+         * Tratamento de erros de todos os métodos
       * [Alexandre](#alexandre)
       * [Jeferson](#jeferson)
 <!--te-->
