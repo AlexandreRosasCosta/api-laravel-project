@@ -35,7 +35,6 @@
 
 ### Como trata-se do laravel, será necessário rodar os comandos a seguir: 
 - "php artisan migrate" - Utilizado para realizar a construção das tabelas do banco
-- "php artisan db:seed" - Utilizado para executar a seed do banco. 
 
 ### Trabalho finalizado com sucesso!!:white_check_mark:
 
