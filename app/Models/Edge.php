@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Edge extends Model
 {
     use HasFactory;
+
+    protected $fillable =[
+        'price',
+        'edge',
+    ];
 }
