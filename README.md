@@ -71,6 +71,6 @@
 ### *Jeferson* 
 
 ##### Criações:
+- Criação da rota e controller de Dough e Edge
 - Autenticação API Token via Sanctum
-- Ajuste de controllers para padronização
 - Validação de testes por meio do Insomnia
