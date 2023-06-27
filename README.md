@@ -26,12 +26,17 @@
 
 
 ## Documentação:
+
+### :warning: Utilizamos o Xampp para inicializarmos o MySQL, desta forma, o Apache e o MySQL precisam estar ativos. 
+### :warning: Necessitará também da criação do banco de dados "web_api".
+
 ### Caso haja o `mysql` instalado na máquina, pode rodar os seguintes comandos:
 - "mysql -h localhost -u root -p" - Para acessar o terminal do MySQL;
 #### Dentro do terminal:
 - "CREATE DATABASE web_api;" - Para criar o banco de dados "web_api";
 
-### :warning: Utilizamos o Xampp para inicializarmos o MySQL, desta forma, o Apache e o MySQL precisam estar ativos. 
+### Caso não haja o `mysql` instalado:
+#### Neste caso, sugerimos que realize a criação do banco de dados pelo phpmyadmin acessando, caso esteja executando o projeto em máquina local, `localhost/phpmyadmin`, mas caso não, necessitamos que crie e acesse o banco de dados com nome "web_api" no servidor que esteja utilizando. 
 
 ### Como trata-se do laravel, será necessário rodar os comandos a seguir: 
 - "php artisan migrate" - Utilizado para realizar a construção das tabelas do banco
@@ -63,10 +68,9 @@
 ### *Alexandre*
 
 #### Criações:
-- Migrations;
-- Seeders; 
-- Factory;
-- Models;
+- Criação das Migrations;
+- Criação dos Models;
+- Realização do README
 
 ### *Jeferson* 
 
@@ -74,3 +78,18 @@
 - Criação da rota e controller de Dough e Edge
 - Autenticação API Token via Sanctum
 - Validação de testes por meio do Insomnia
+
+
+## Rotas
+
+### POST
+    #Flavor#
+    
+    /flavor
+    /flavor/{id}
+### GET
+    -  
+### DELETE
+    - 
+### PUT
+    - 
