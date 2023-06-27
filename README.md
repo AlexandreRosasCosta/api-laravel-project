@@ -13,6 +13,7 @@
       * [Maria Eduarda](#maria-eduarda)
       * [Alexandre](#alexandre)
       * [Jeferson](#jeferson)
+  * [Descrição de Rotas](#rotas)
 <!--te-->
 
 ## Alunos:
@@ -38,13 +39,13 @@
 ### Caso não haja o `mysql` instalado:
 #### Neste caso, sugerimos que realize a criação do banco de dados pelo phpmyadmin acessando, caso esteja executando o projeto em máquina local, `localhost/phpmyadmin`, mas caso não, necessitamos que crie e acesse o banco de dados com nome "web_api" no servidor que esteja utilizando. 
 
-### Como trata-se do laravel, será necessário rodar os comandos a seguir: 
-- "php artisan migrate" - Utilizado para realizar a construção das tabelas do banco
+### Como trata-se do laravel, será necessário rodar o comando a seguir: 
+- "php artisan migrate" - Utilizado para realizar a construção das tabelas do banco.
 
 ### Para o teste da API utilizamos o client http Insomnia
-- será necessário importar o arquivo API_pizzaria.json para execução dos testes
-- devido a autenticação necessária para as rotas somente os testes de registro e login foram automatizados
-- para as demais rotas, faz-se necessário utilizar um token já criado via registro ou login
+- Será necessário importar o arquivo API_pizzaria.json para execução dos testes;
+- Devido a autenticação necessária para as rotas somente os testes de registro e login foram automatizados;
+- Para as demais rotas, faz-se necessário utilizar um token já criado via registro ou login.
 
 ### Trabalho finalizado com sucesso!!:white_check_mark:
 
