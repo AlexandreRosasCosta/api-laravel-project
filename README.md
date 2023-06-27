@@ -22,7 +22,7 @@
 
 
 ## Descrição:
-### Trabalho realizado para a matéria de Web-Servidor com o intuito de apresentar o terceiro projeto para avaliação. O projeto trata-se de uma api que realiza consultas, inserções e deleções no banco de dados do sistema da pizzaria dos outros projetos.
+### Trabalho realizado para a matéria de Web-Servidor com o intuito de apresentar o terceiro projeto para avaliação. O projeto trata-se de uma api que realiza consultas, inserções, atualizações e deleções no banco de dados do sistema da pizzaria dos outros projetos.
 
 
 ## Documentação:
@@ -35,7 +35,6 @@
 
 ### Como trata-se do laravel, será necessário rodar os comandos a seguir: 
 - "php artisan migrate" - Utilizado para realizar a construção das tabelas do banco
-- "php artisan db:seed" - Utilizado para executar a seed do banco. 
 
 ### Para o teste da API utilizamos o client http Insomnia
 - será necessário importar o arquivo API_pizzaria.json para execução dos testes
@@ -47,7 +46,6 @@
 ## Features:
 
 - :heavy_check_mark: Criação do banco de dados;
-- :heavy_check_mark: Criação de Seed;
 - :heavy_check_mark: CRUD;
 - :heavy_check_mark: Rotas estruturadas;
 - :heavy_check_mark: Autenticação;
@@ -57,6 +55,11 @@
 
 ### *Maria Eduarda*
 
+#### Criações:
+- Criação da rota e controller de Flavor e Size
+- Padronização de mensagens de retorno para todos os métodos dos controllers
+- Tratamento de erros de todos os métodos dos controllers
+  
 ### *Alexandre*
 
 #### Criações:
