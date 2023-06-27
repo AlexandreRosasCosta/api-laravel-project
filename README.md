@@ -72,4 +72,5 @@
 
 ##### Criações:
 - Autenticação API Token via Sanctum
+- Ajuste de controllers para padronização
 - Validação de testes por meio do Insomnia
