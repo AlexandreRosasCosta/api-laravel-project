@@ -66,7 +66,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     /*
     * Rotas bordas
     */
-    //Route::apiResource('dough', EdgeController::class); /*método para simplificar as rotas
+    //Route::apiResource('edge', EdgeController::class); /*método para simplificar as rotas
     Route::post('/edge', [EdgeController::class, 'store']);
     Route::put('/edge/{id}', [EdgeController::class, 'update']);
     Route::get('/edge', [EdgeController::class, 'index']);

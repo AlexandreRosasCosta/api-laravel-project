@@ -37,6 +37,11 @@
 - "php artisan migrate" - Utilizado para realizar a construção das tabelas do banco
 - "php artisan db:seed" - Utilizado para executar a seed do banco. 
 
+### Para o teste da API utilizamos o client http Insomnia
+- será necessário importar o arquivo API_pizzaria.json para execução dos testes
+- devido a autenticação necessária para as rotas somente os testes de registro e login foram automatizados
+- para as demais rotas, faz-se necessário utilizar um token já criado via registro ou login
+
 ### Trabalho finalizado com sucesso!!:white_check_mark:
 
 ## Features:
@@ -45,7 +50,7 @@
 - :heavy_check_mark: Criação de Seed;
 - :heavy_check_mark: CRUD;
 - :heavy_check_mark: Rotas estruturadas;
-- Autenticação;
+- :heavy_check_mark: Autenticação;
 
 
 ## Atividades:
@@ -61,3 +66,7 @@
 - Models;
 
 ### *Jeferson* 
+
+##### Criações:
+- Autenticação API Token via Sanctum
+- Validação de testes por meio do Insomnia
