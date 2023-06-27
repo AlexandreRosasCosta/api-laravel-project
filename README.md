@@ -31,7 +31,7 @@
 ### :warning: Utilizamos o Xampp para inicializarmos o MySQL, desta forma, o Apache e o MySQL precisam estar ativos. 
 ### :warning: Necessitará também da criação do banco de dados "web_api".
 
-### Caso haja o `mysql` instalado na máquina, pode rodar os seguintes comandos:
+### Caso haja o `mysql` instalado na máquina, pode rodar o seguinte comando:
 - "mysql -h localhost -u root -p" - Para acessar o terminal do MySQL;
 #### Dentro do terminal:
 - "CREATE DATABASE web_api;" - Para criar o banco de dados "web_api";
@@ -62,35 +62,130 @@
 ### *Maria Eduarda*
 
 #### Criações:
-- Criação da rota e controller de Flavor e Size
-- Padronização de mensagens de retorno para todos os métodos dos controllers
-- Tratamento de erros de todos os métodos dos controllers
+- Criação da rota e controller de Flavor e Size;
+- Padronização de mensagens de retorno para todos os métodos dos controllers;
+- Tratamento de erros de todos os métodos dos controllers.
   
 ### *Alexandre*
 
 #### Criações:
 - Criação das Migrations;
 - Criação dos Models;
-- Realização do README
+- Realização do README.
 
 ### *Jeferson* 
 
-##### Criações:
-- Criação da rota e controller de Dough e Edge
-- Autenticação API Token via Sanctum
-- Validação de testes por meio do Insomnia
+#### Criações:
+- Criação da rota e controller de Dough e Edge;
+- Autenticação API Token via Sanctum;
+- Validação de testes por meio do Insomnia.
 
 
 ## Rotas
 
 ### POST
+
     #Flavor#
     
-    /flavor
-    /flavor/{id}
+    Rota: /flavor
+    Params:     'flavor' => 'required',
+                'info' => 'required',
+                'type' => 'required',
+                'price' => 'required',
+                'image' => 'required',
+            
+
+    #Size#
+
+    Rota: /size
+    Params:     'size' => 'required',
+                'price' => 'required',
+                'amount_flavors' => 'required',
+                'info' => 'required',
+
+    #Dough#
+    
+    Rota: /dough
+    Params:     'price' => 'required',
+                'info' => 'required',
+                'dough' => 'required'
+
+    #Edge#
+    Rota: /edge
+    Pramas:     'price' => 'required',
+                'edge' => 'required',
+    
 ### GET
-    -  
+
+    #Flavor#
+    
+    Rota: /flavor
+    Rota com filtro: /flavor/{id}
+
+    #Size#
+
+    Rota: /size
+    Rota com filtro: /size/{id}
+
+    #Dough#
+    
+    Rota: /dough
+    Rota com filtro: /dough/{id}
+
+    #Edge#
+    Rota: /edge
+    Rota com filtro: /edge/{id}
+    
 ### DELETE
-    - 
+
+    #Flavor#
+    
+    Rota: /flavor/{id}
+
+    #Size#
+
+    Rota: /size/{id}
+
+    #Dough#
+    
+    Rota: /dough/{id}
+
+    #Edge#
+    
+    Rota: /edge/{id}
+    
 ### PUT
-    - 
+
+    #Flavor#
+    
+    Rota: /flavor/{id}
+    Params:     'id' => 'required',
+                'flavor',
+                'info',
+                'type',
+                'price',
+                'image'
+
+    #Size#
+
+    Rota: /size/{id}
+    Params:     'id' => 'required',
+                'size',
+                'price',
+                'amount_flavors',
+                'info'
+                
+    #Dough#
+    
+    Rota: /dough/{id}
+    Params:     'id' => 'required',
+                'price',
+                'info',
+                'dough'
+
+    #Edge#
+    
+    Rota: /edge/{id}
+    Pramas:     'id' => 'required',
+                'price',
+                'edge'
